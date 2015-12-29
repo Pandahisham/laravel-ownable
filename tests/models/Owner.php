@@ -3,19 +3,17 @@
     use Illuminate\Database\Eloquent\Model;
 
     /**
-     * Class Owner
+     * Class Owner.
      */
     class Owner extends Model
     {
-
         /**
          * @var array
          */
-        protected $fillable = [ 'email' ];
+        protected $fillable = ['email'];
 
         /**
          * @var string
          */
         protected $primaryKey = 'idnum';
-
     }

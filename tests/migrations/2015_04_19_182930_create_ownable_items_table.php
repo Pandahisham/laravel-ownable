@@ -5,7 +5,6 @@
 
     class CreateOwnableItemsTable extends Migration
     {
-
         /**
          * Run the migrations.
          *
@@ -13,11 +12,11 @@
          */
         public function up()
         {
-            Schema::create( 'ownable_items', function ( Blueprint $table ) {
-                $table->increments( 'id' );
-                $table->integer( 'owner_id' )->index()->unsigned()->nullable();
+            Schema::create('ownable_items', function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('owner_id')->index()->unsigned()->nullable();
                 $table->timestamps();
-            } );
+            });
         }
 
         /**
@@ -27,7 +26,6 @@
          */
         public function down()
         {
-            Schema::drop( 'ownable_items' );
+            Schema::drop('ownable_items');
         }
-
     }

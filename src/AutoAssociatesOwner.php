@@ -2,18 +2,16 @@
 
 namespace Tshafer\Ownable;
 
-
 use Illuminate\Support\Facades\Auth;
 
-trait AutoAssociatesOwner {
-
+trait AutoAssociatesOwner
+{
     /**
-     * Boots the trait
+     * Boots the trait.
      */
     protected static function bootAutoAssociatesOwner()
     {
-        static::creating(function ($ownable)
-        {
+        static::creating(function ($ownable) {
             $ownable->associateDefaultOwner();
         });
     }
@@ -21,7 +19,7 @@ trait AutoAssociatesOwner {
     /**
      * Associates the default owner
      * By default it associates the logged in user
-     * Override when needed
+     * Override when needed.
      */
     public function associateDefaultOwner()
     {
@@ -29,5 +27,4 @@ trait AutoAssociatesOwner {
 
         $this->associateOwner($owner);
     }
-
 }

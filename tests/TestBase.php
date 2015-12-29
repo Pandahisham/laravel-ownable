@@ -3,11 +3,10 @@
     use Orchestra\Testbench\TestCase;
 
     /**
-     * Class TestBase
+     * Class TestBase.
      */
     class TestBase extends TestCase
     {
-
         /**
          *
          */
@@ -21,18 +20,18 @@
         /**
          * @param $app
          */
-        protected function getEnvironmentSetUp( $app )
+        protected function getEnvironmentSetUp($app)
         {
-            $app[ 'path.base' ] = __DIR__ . '/..';
+            $app[ 'path.base' ] = __DIR__.'/..';
 
-            $app[ 'config' ]->set( 'database.default', 'sqlite' );
-            $app[ 'config' ]->set( 'database.connections.sqlite', [
+            $app[ 'config' ]->set('database.default', 'sqlite');
+            $app[ 'config' ]->set('database.connections.sqlite', [
                 'driver'   => 'sqlite',
                 'database' => ':memory:',
-                'prefix'   => ''
-            ] );
+                'prefix'   => '',
+            ]);
 
-            $app[ 'config' ]->set( 'auth.model', 'User' );
+            $app[ 'config' ]->set('auth.model', 'User');
         }
 
         /**
@@ -42,12 +41,12 @@
         {
             // Relative to the testbench app folder: vendors/orchestra/testbench/src/fixture
             $migrationsPath = 'tests/migrations';
-            $artisan        = $this->app->make( 'Illuminate\Contracts\Console\Kernel' );
+            $artisan = $this->app->make('Illuminate\Contracts\Console\Kernel');
 
             // Migrate
-            $artisan->call( 'migrate', [
+            $artisan->call('migrate', [
                 '--database' => 'sqlite',
                 '--path'     => $migrationsPath,
-            ] );
+            ]);
         }
     }

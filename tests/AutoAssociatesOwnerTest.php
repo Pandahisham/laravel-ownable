@@ -3,11 +3,10 @@
     use Illuminate\Support\Facades\Auth;
 
     /**
-     * Class AutoAssociatesOwnerTest
+     * Class AutoAssociatesOwnerTest.
      */
     class AutoAssociatesOwnerTest extends TestBase
     {
-
         /**
          *
          */
@@ -23,18 +22,17 @@
          */
         protected function createUsers()
         {
-            User::create( [ 'id' => 1, 'email' => 'john@doe.com' ] );
+            User::create(['id' => 1, 'email' => 'john@doe.com']);
         }
 
         /** @test */
-        function it_associates_logged_in_user_on_create()
+        public function it_associates_logged_in_user_on_create()
         {
             // Log a user in
-            $user = User::find( 1 );
-            Auth::login( $user );
+            $user = User::find(1);
+            Auth::login($user);
 
-            $associatable2 = AssociatableItem::create( [ ] );
-            $this->assertEquals( $associatable2->owner, $user );
+            $associatable2 = AssociatableItem::create([]);
+            $this->assertEquals($associatable2->owner, $user);
         }
-
     }

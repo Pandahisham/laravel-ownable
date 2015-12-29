@@ -5,15 +5,14 @@
     use Illuminate\Database\Eloquent\Model;
 
     /**
-     * Class User
+     * Class User.
      */
     class User extends Model implements AuthenticatableContract
     {
-
         use Authenticatable;
 
         /**
          * @var array
          */
-        protected $fillable = [ 'email' ];
+        protected $fillable = ['email'];
     }

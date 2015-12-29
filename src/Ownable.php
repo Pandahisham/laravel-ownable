@@ -1,19 +1,16 @@
 <?php
 
-    namespace Tshafer\Ownable;
+namespace Tshafer\Ownable;
 
-    use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model;
 
     /**
-     * Class Ownable
-     *
-     * @package Tshafer\Ownable
+     * Class Ownable.
      */
     trait Ownable
     {
-
         /**
-         * Owner of the model
+         * Owner of the model.
          *
          * @return mixed
          */
@@ -27,7 +24,7 @@
         }
 
         /**
-         * Getter for owner
+         * Getter for owner.
          *
          * @return mixed
          */
@@ -37,17 +34,17 @@
         }
 
         /**
-         * Returns the name for owner model
+         * Returns the name for owner model.
          *
          * @return string
          */
         protected function getOwnerModelName()
         {
-            return $this->ownerModel ?: config( 'auth.model' );
+            return $this->ownerModel ?: config('auth.model');
         }
 
         /**
-         * Returns the owner key
+         * Returns the owner key.
          *
          * @return string
          */
@@ -57,7 +54,7 @@
         }
 
         /**
-         * Returns the owner key
+         * Returns the owner key.
          *
          * @return string
          */
@@ -67,19 +64,19 @@
         }
 
         /**
-         * Changes owner of the model
+         * Changes owner of the model.
          *
          * @param Model $owner
          */
-        public function changeOwnerTo( Model $owner )
+        public function changeOwnerTo(Model $owner)
         {
-            $this->associateOwner( $owner );
+            $this->associateOwner($owner);
 
             $this->save();
         }
 
         /**
-         * Abandons owner of the model
+         * Abandons owner of the model.
          */
         public function abandonOwner()
         {
@@ -89,19 +86,19 @@
         }
 
         /**
-         * Associates owner
+         * Associates owner.
          *
          * @param Model $owner
          *
          * @return Model
          */
-        public function associateOwner( Model $owner )
+        public function associateOwner(Model $owner)
         {
-            return $this->owner()->associate( $owner );
+            return $this->owner()->associate($owner);
         }
 
         /**
-         * Dissociates owner
+         * Dissociates owner.
          *
          * @return Model
          */
@@ -109,5 +106,4 @@
         {
             return $this->owner()->dissociate();
         }
-
     }

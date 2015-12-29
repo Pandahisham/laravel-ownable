@@ -6,10 +6,9 @@
     use Tshafer\Ownable\Ownable;
 
     /**
-     * Class AssociatableItem
+     * Class AssociatableItem.
      */
     class AssociatableItem extends Model implements OwnableContract
     {
-
         use Ownable, AutoAssociatesOwner;
     }

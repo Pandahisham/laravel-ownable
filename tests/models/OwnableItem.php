@@ -5,11 +5,10 @@
     use Kenarkose\Ownable\Ownable;
 
     /**
-     * Class OwnableItem
+     * Class OwnableItem.
      */
     class OwnableItem extends Model implements OwnableContract
     {
-
         use Ownable;
 
         /**
@@ -28,6 +27,5 @@
         /**
          * @var array
          */
-        protected $fillable = [ 'owner_id' ];
-
+        protected $fillable = ['owner_id'];
     }

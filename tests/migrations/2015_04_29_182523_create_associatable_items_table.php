@@ -5,7 +5,6 @@
 
     class CreateAssociatableItemsTable extends Migration
     {
-
         /**
          * Run the migrations.
          *
@@ -13,11 +12,11 @@
          */
         public function up()
         {
-            Schema::create( 'associatable_items', function ( Blueprint $table ) {
-                $table->increments( 'id' );
-                $table->integer( 'user_id' )->index()->unsigned()->nullable();
+            Schema::create('associatable_items', function (Blueprint $table) {
+                $table->increments('id');
+                $table->integer('user_id')->index()->unsigned()->nullable();
                 $table->timestamps();
-            } );
+            });
         }
 
         /**
@@ -27,7 +26,6 @@
          */
         public function down()
         {
-            Schema::drop( 'associatable_items' );
+            Schema::drop('associatable_items');
         }
-
     }

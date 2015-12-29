@@ -1,6 +1,6 @@
 <?php
 
-namespace Kenarkose\Ownable;
+namespace Tshafer\Ownable;
 
 
 use Illuminate\Support\Facades\Auth;
